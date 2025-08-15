@@ -1,0 +1,10 @@
+@model List<Pelicula>
+<h2>Películas en la categoría: @ViewBag.Categoria</h2>
+<ul>
+@foreach (var p in Model)
+{
+    <li><strong>@p.Titulo</strong> - @p.Descripcion</li>
+}
+</ul>
+
+<a href="@Url.Action("Index", "Peliculas")">Volver a categorías</a>

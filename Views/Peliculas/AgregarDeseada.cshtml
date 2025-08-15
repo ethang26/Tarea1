@@ -1,0 +1,26 @@
+@model Pelicula
+
+<h2>Sugerir nueva película</h2>
+
+@if (ViewBag.Error != null)
+{
+    <p style="color:red">@ViewBag.Error</p>
+}
+
+<form asp-action="AgregarDeseada" method="post">
+    <label>Título:</label>
+    <input type="text" name="Titulo" value="@Model?.Titulo" /><br>
+
+    <label>Descripción:</label>
+    <input type="text" name="Descripcion" value="@Model?.Descripcion" /><br>
+
+    <label>Categoría:</label>
+    <select name="CategoriaId">
+        <option value="">--Seleccione--</option>
+        <option value="1">Acción</option>
+        <option value="2">Comedia</option>
+        <option value="3">Ciencia Ficción</option>
+    </select><br>
+
+    <button type="submit">Enviar</button>
+</form>

@@ -1,0 +1,26 @@
+@model List<Categoria>
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0">Categorías de películas</h2>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush mb-3">
+                        @foreach (var cat in Model)
+                        {
+                            <li class="list-group-item">
+                                <a class="text-decoration-none" asp-action="ListaPeliculas" asp-controller="Peliculas" asp-route-id="@cat.Id">
+                                    @cat.Nombre
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                    <a class="btn btn-success" asp-action="AgregarDeseada" asp-controller="Peliculas">Sugerir una película</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
